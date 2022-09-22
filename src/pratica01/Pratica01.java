@@ -10,7 +10,7 @@ public class Pratica01 {
             "Lisboa", "Tokio"};
 
     public static void main(String[] args) {
-
+        double startTime = System.nanoTime();
         int[][] temperaturas = {{-2,33},{-3,32},{-8,27},{4,37},{6,42},{5,43},{0,39},{-7,26},{-1,31},{-10,35}};
 
         int maiorTemperaturaIdx = obterMaiorTemperatura(temperaturas);
@@ -21,6 +21,9 @@ public class Pratica01 {
 
         System.out.printf("A cidade com a menor temperatura é %s com %d graus\n",
                 CIDADES[menorTemperaturaIdx], temperaturas[menorTemperaturaIdx][MINIMA_IDX]);
+
+        double endTime = (System.nanoTime() - startTime)/1_000_000_000;
+        System.out.printf("Tempo de execucao: %f\n", endTime);
     }
 
     public static int obterMaiorTemperatura(int[][] temperaturas){

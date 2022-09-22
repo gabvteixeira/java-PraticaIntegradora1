@@ -7,6 +7,7 @@ public class Bonus {
     static final int MINIMA_IDX = 0;
 
     public static void main(String[] args) {
+        double startTime = System.nanoTime();
         HashMap<String, int[]> cidades = new HashMap<>() {{
             put("Londres", new int[] {-2, 33});
             put("Madrid", new int[] {-3, 32});
@@ -38,6 +39,9 @@ public class Bonus {
 
         System.out.printf("A cidade com a menor temperatura é %s com %d graus\n",
                 menorTemperaturaKey, cidades.get(menorTemperaturaKey)[MINIMA_IDX]);
+
+        double endTime = (System.nanoTime() - startTime)/1_000_000_000;
+        System.out.printf("Tempo de execucao: %f\n", endTime);
 
     }
 }
